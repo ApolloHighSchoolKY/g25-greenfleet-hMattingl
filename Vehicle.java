@@ -18,6 +18,11 @@ public class Vehicle {
         engineRunning = true;
     }
 
+    public void stopEngine()
+    {
+        engineRunning = false;
+    }
+
     /**
      * Increases mileage if the engine is running.
      */

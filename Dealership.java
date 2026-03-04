@@ -14,18 +14,23 @@ public class Dealership {
         // TODO: If a vehicle is an ElectricCar, check if it needs a charge.
         for(Vehicle v: inventory)
         {
-            //if(!(v instanceof ElectricCar)) test if drive worked as intended
+            //if(!(v instanceof ElectricCar)) //test if drive worked as intended
             v.startEngine();
 
-            v.drive(20);
+            v.drive(550);
             System.out.println(v);
 
             if(v instanceof ElectricCar)
             {
-                //System.out.println(((ElectricCar)v).getCharge()); test instanceof/ ElectricCar's drive 
-                ((ElectricCar)v).charge();
-                //System.out.println(((ElectricCar)v).getCharge()); test charge
+                System.out.println(((ElectricCar)v).getCharge()); //test instanceof/ ElectricCar's drive 
+                if(((ElectricCar)v).getCharge()< 50)
+                    ((ElectricCar)v).charge();
+                System.out.println(((ElectricCar)v).getCharge()); //test charge
             }
+
+            v.stopEngine();
+
+            System.out.println(v);
 
         }
     }
